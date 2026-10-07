@@ -3,349 +3,189 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ficha de Herói</title>
+    <meta name="description" content="Ficha da personagem ASTRID, uma inteligência artificial humanoide.">
+    <title>Ficha da ASTRID</title>
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.1.0/model-viewer.min.js"></script>
-    <style>
-        img.perfil {
-            width: 150px;
-            height: auto;
-            max-width: 100%;
-            display: block;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>FICHA DA PERSONAGEM</h1>
-    <hr>
-    <header>
-        <nav>
-            <h3>Menu</h3>
-            <ul>
-                <li><a href="#Sobre">Sobre</a></li>
-                <li><a href="#Atributos_&_Habilidades">Atributos & Habilidades</a></li>
-                <li><a href="#Inventario_&_Conquistas">Inventário & Conquistas</a></li>
-                <li><a href="#Contato">Contato</a></li>
-            </ul>
-        </nav>
-    </header>
-<hr>
+<h1>FICHA DA PERSONAGEM</h1>
 
-    <main>
+<header>
+    <nav>
+        <h3>Menu</h3>
+        <ul>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#atributos">Atributos &amp; Habilidades</a></li>
+            <li><a href="#inventario">Inventário &amp; Conquistas</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+    </nav>
+</header>
 
-
-        <section id="Sobre">
-            <h2>SOBRE A ASTRID &hearts;</h2>
-            <img src="imagens/astrid-perfil.png.png" alt="Astrid" class="perfil">
-            <hr>
-            <label for="vizu">Visualize em 3D:</label>
-            <model-viewer
-                src="modelos/ASTRID.vrm"
-                camera-controls
-                auto-rotate
-                style="width: 250px; height: 400px;">
-            </model-viewer>
-<hr>
-            <p>
-                Uma personagem de inteligência artificial humanoide criada para auxiliar os humanos através da tecnologia.
-                ASTRID possui uma habilidade única de identificar e interpretar movimentos humanos,
-                transformando gestos em comandos e ações digitais.
-                Sua principal aplicação é o Arpente, sistema que permite transformar os movimentos das mãos
-                em desenhos na tela.
-                Ao lado de uma super-heroína humana, ASTRID atua como sua parceira e suporte tecnológico,
-                usando sua inteligência para ajudá-la em suas missões e tornando-se uma verdadeira aliada dos humanos.
-            </p>
-
-        </section>
-        <br>
-<hr>
-        <section id="Atributos_&_Habilidades">
-
-            <h2>ATRIBUTOS & HABILIDADES</h2>
-            <h3>ATRIBUTOS</h3>
-            <ul>
-
-                <li>PROCESSAMENTO</li>
-                <li>INTELIGÊNCIA</li>
-                <li>PERCEPÇÃO</li>
-                <li>TECNOLOGIA</li>
-                <li>VELOCIDADE DE RESPOSTA</li>
-
-            </ul>
-
-            <h3>PROGRESSOS</h3>
-            <ul>
-                <li>
-
-                    PROCESSAMENTO
-
-                    <div class="barra-atributo">
-                        <div class="progresso_de_PROCESSAMENTO"></div>
-                    </div>
-
-                </li>
-
-
-                <li>
-
-                    INTELIGÊNCIA
-
-                    <div class="barra-atributo">
-                        <div class="progresso_de_INTELIGÊNCIA"></div>
-                    </div>
-
-                </li>
-
-
-                <li>
-
-                    PERCEPÇÃO
-
-                    <div class="barra-atributo">
-                        <div class="progresso_de_PERCEPÇÃO"></div>
-                    </div>
-
-                </li>
-
-
-                <li>
-
-                    TECNOLOGIA
-
-                    <div class="barra-atributo">
-                        <div class="progresso_de_TECNOLOGIA"></div>
-                    </div>
-
-                </li>
-
-
-                <li>
-
-                    VELOCIDADE DE RESPOSTA
-
-                    <div class="barra-atributo">
-                        <div class="progresso_de_VELOCIDADE-DE-RESPOSTA"></div>
-                    </div>
-
-                </li>
-                <h3>HABILIDADES</h3>
-
-              <ul>
-
-             <li>
-             <h4>Caça-Fantasma</h4>
-
-          <p>
-            Permite que ASTRID identifique e interprete movimentos humanos
-            através de visão computacional, transformando gestos em comandos digitais.
-        </p>
-
-            </li>
-
-    <li>
-        <h4>ARPENTE</h4>
-
-        <p>
-            Transforma os movimentos das mãos captados pela webcam em desenhos digitais.
-        </p>
-    </li>
-    <li>
-        <h4>Comunicação Humana</h4>
-
-    <p>
-        Capacidade de se comunicar e interagir com humanos,
-        compreendendo suas necessidades e respondendo de forma natural.
-    </p>
-</li>
-              </ul>
+<main>
+<section id="sobre">
+    <h2>SOBRE A ASTRID</h2>
+    <img src="imagens/astrid-perfil.png.png" alt="Avatar da personagem ASTRID" class="perfil">
     
-        </section>
+    <h3>Visualize em 3D:</h3>
+    <model-viewer src="modelos/ASTRID.vrm" camera-controls auto-rot
+     style="width:250px;height:400px;"></model-viewer>
+    
+    <p>Uma personagem de inteligência artificial humanoide criada para auxiliar os humanos através da tecnologia. ASTRID possui uma habilidade única de identificar e interpretar movimentos humanos, transformando gestos em comandos e ações digitais. Sua principal aplicação é o Arpente, sistema que permite transformar os movimentos das mãos em desenhos na tela. Ao lado de uma super-heroína humana, ASTRID atua como sua parceira e suporte tecnológico, usando sua inteligência para ajudá-la em suas missões e tornando-se uma verdadeira aliada dos humanos.</p>
+</section>
+<br>
 
-<hr>
-        <section id="Inventario_&_Conquistas">
-            <h2>INVENTÁRIO & CONQUISTAS</h2>
-            <h3>INVENTÁRIO</h3>
-            <ul>
-                <li>
+<section id="atributos">
+    <h2>ATRIBUTOS &amp; HABILIDADES</h2>
+    <h3>ATRIBUTOS</h3>
+    <ul>
+        <li>PROCESSAMENTO</li>
+        <li>INTELIGÊNCIA</li>
+        <li>PERCEPÇÃO</li>
+        <li>TECNOLOGIA</li>
+        <li>VELOCIDADE DE RESPOSTA</li>
+    </ul>
+    <br>
+    <br>
+    <h3>PROGRESSOS</h3>
+    
+    
+    <ul>
+        <li>PROCESSAMENTO
+            <div class="barra-atributo"><div class="progresso-de-processamento"></div></div>
+        </li>
+        <li>INTELIGÊNCIA
+            <div class="barra-atributo"><div class="progresso-de-inteligencia"></div></div>
+        </li>
+        <li>PERCEPÇÃO
+            <div class="barra-atributo"><div class="progresso-de-percepcao"></div></div>
+        </li>
+        <li>TECNOLOGIA
+            <div class="barra-atributo"><div class="progresso-de-tecnologia"></div></div>
+        </li>
+        <li>VELOCIDADE DE RESPOSTA
+            <div class="barra-atributo"><div class="progresso-de-velocidade"></div></div>
+        </li>
+    </ul>
+    <br> 
+    <h3>HABILIDADES</h3>
+    <ul>
+        <li>
+            <article>
+                <h4>Caça-Fantasma</h4>
+                <p>Permite que ASTRID identifique e interprete movimentos humanos através de visão computacional, transformando gestos em comandos digitais.</p>
+            </article>
+        </li>
+        <li>
+            <article>
+                <h4>ARPENTE</h4>
+                <p>Transforma os movimentos das mãos captados pela webcam em desenhos digitais.</p>
+            </article>
+        </li>
+        <li>
+            <article>
+                <h4>Comunicação Humana</h4>
+                <p>Capacidade de se comunicar e interagir com humanos, compreendendo suas necessidades e respondendo de forma natural.</p>
+            </article>
+        </li>
+    </ul>
+</section>
 
-                    <h4>Corpo Humanoide</h4>
-                    <p>
-                        A forma física autônoma da ASTRID, criada para permitir sua interação direta com o ambiente.
-                    </p>
+<section id="inventario">
+    <h2>INVENTÁRIO &amp; CONQUISTAS</h2>
+    <h3>INVENTÁRIO</h3>
+    <ul>
+        <li>
+            <article>
+                <h4>Corpo Humanoide</h4>
+                <img src="imagens/corpo_humanoide.png"> 
+                <p>A forma física autônoma da ASTRID, criada para permitir sua interação direta com o ambiente.</p>
+                <p>Raridade: ÉPICO</p>
+            </article>
+        </li>
+        <li>
+            <article>
+                <h4>Luvas de Interface</h4>
+                <img src="imagens/luva_d_interface.png"> 
+                <p>Permitem que ASTRID interprete estímulos relacionados ao toque humano, ampliando sua capacidade de interação com pessoas e objetos.</p>
+                <p>Raridade: SUPER-RARO</p>
+            </article>
+        </li>
+        <li>
+            <article>
+                <h4>Núcleo de Energia</h4>
+                 <img src="imagens/Núcleo de Energia.png"> 
+                <p>Localizado em seu equipamento de cintura. Fornece energia para manter seus sistemas e seu corpo humanoide em funcionamento.</p>
+                <p>Raridade: COMUM</p>
+            </article>
+        </li>
+        <li>
+            <article>
+                <h4>Módulos de Mobilidade</h4>
+                <img src="imagens/modulos_de_mobilidade.png"> 
+                <p>Integrados à estrutura humanoide, permitem que ASTRID se movimente e interaja fisicamente com o ambiente.</p>
+                <p>Raridade: COMUM</p>
+            </article>
+        </li>
+        <li>
+            <article>
+                <h4>Versão Digital</h4>
+                <img src="imagens/versao digital.png"> 
+                <p>A forma digital da ASTRID. Através da webcam, ela utiliza visão computacional para perceber o ambiente e interpretar movimentos humanos.</p>
+                <p>Raridade: RARO</p>
+            </article>
+        </li>
+        <li>
+            <article>
+                <h4>Arpente</h4>
+                 <img src="imagens/sistema_visao_computacional.png"> 
+                <p>Sistema capaz de transformar movimentos das mãos captados pela webcam em desenhos digitais.</p>
+                <p>Raridade: LENDÁRIO</p>
+            </article>
+        </li>
+    </ul>
+    <br> 
+    <h3>CONQUISTAS</h3>
 
-                    <p>Raridade: ÉPICO</p>
+    <ul>
+        <li>Primeira IA a possuir autonomia humanoide</li>
+        <li>Desenvolvimento do Arpente</li>
+        <li>Parceira de humanos</li>
+    </ul>
+</section>
 
-                </li>
-
-
-                <li>
-
-                    <h4>Luvas de Interface</h4>
-                    <p>
-                        Permitem que ASTRID interprete estímulos relacionados ao toque humano,
-                        ampliando sua capacidade de interação com pessoas e objetos.
-                    </p>
-
-                    <p>Raridade: SUPER-RARO</p>
-
-                </li>
-
-
-                <li>
-
-                    <h4>Núcleo de Energia</h4>
-                    <p>
-                        Localizado em seu equipamento de cintura.
-                        Fornece energia para manter seus sistemas e seu corpo humanoide em funcionamento.
-                    </p>
-
-                    <p>Raridade: COMUM</p>
-
-                </li>
-
-
-                <li>
-
-                    <h4>Módulos de Mobilidade</h4>
-                    <p>
-                        Integrados à estrutura humanoide, permitem que ASTRID se movimente
-                        e interaja fisicamente com o ambiente.
-                    </p>
-
-                    <p>Raridade: COMUM</p>
-
-                </li>
-
-
-                <li>
-
-                    <h4>Versão Digital</h4>
-                    <p>
-                        A forma digital da ASTRID.
-                        Através da webcam, ela utiliza visão computacional para perceber o ambiente
-                        e interpretar movimentos humanos.
-                    </p>
-
-                    <p>Raridade: RARO</p>
-
-                </li>
-
-
-                <li>
-
-                    <h4>Arpente</h4>
-                    <p>
-                        Sistema capaz de transformar movimentos das mãos captados pela webcam
-                        em desenhos digitais.
-                    </p>
-
-                    <p>Raridade: LENDÁRIO</p>
-
-                </li>
-
-            </ul>
-
-
-            <h3>CONQUISTAS</h3>
-            <ul>
-
-                <li>Primeira IA a possuir autonomia humanoide</li>
-
-                <li>Desenvolvimento do Arpente</li>
-
-                <li>Parceira de humanos</li>
-
-            </ul>
-
-        </section>
-
-<hr>
-        <section id="Contato">
-
-            <h3>CONTATO</h3>
-            <p>Entre em contato com a Astrid:</p>
-
-            <p>
-                <abbr title="Seus dados são protegidos e utilizados apenas para contato.">ⓘ</abbr>
-            </p>
-
-
-            <form action="#" method="post">
-
-
-                <label for="nome">Nome:</label>
-
-                <input
-                    type="text"
-                    id="nome"
-                    name="nome"
-                    minlength="3"
-                    maxlength="50"
-                    required>
-
-                <br>
-
-
-                <label for="idade">Data de Nascimento:</label>
-
-                <input
-                    type="date"
-                    id="idade"
-                    name="idade"
-                    required>
-
-                <br>
-
-
-                <label for="email">Email:</label>
-
-                <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required>
-
-                <br>
-                <label for="assunto">Assunto:</label>
-                <input type="text" 
-                id="assunto"
-                 name="assunto" 
-                 minlength="3" 
-                 maxlength="50" required>
-                <br>
-
-
-                <label for="mensagem">     </label>
-
-                <textarea
-                    id="mensagem"
-                    name="mensagem"
-                    rows="5"
-                    cols="35"
-                    minlength="2"
-                    maxlength="100"
-                    placeholder="Descreva sua solicitação para ASTRID..."
-                    required></textarea>
-
-                <br>
-                <button type="submit">Enviar</button>
-                
-            <p>
-           Quer saber mais sobre a ASTRID ou acompanhar o desenvolvimento da personagem?
-         Entre em contato com sua criadora clicando nesse link abaixo!
-           </p>
-
-         <p>
-         <a href="https://br.linkedin.com/in/bianca-minadakis" target="_blank">Clique aqui&trade;  <!-- ™ --> </a>
-         </p>
-
-            </form>
-        </section>
-    </main>
-
-
-    <footer>
-        <p>© ASTRID — Sistema de suporte tecnológico.</p>
-    </footer>
-
+<section id="contato">
+    <h2>CONTATO</h2>
+    <form action="#" method="post">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" minlength="3" maxlength="50" required>
+        <br>
+        <label for="idade">Data de Nascimento:</label>
+        <input type="date" id="idade" name="idade" required>
+        <br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <br>
+        <label for="assunto">Assunto:</label>
+        <input type="text" id="assunto" name="assunto" minlength="3" maxlength="50" required>
+        <br>
+        <label for="mensagem">Mensagem:</label>
+        <textarea id="mensagem" name="mensagem" rows="5" cols="35" minlength="2" maxlength="100" placeholder="Descreva sua solicitação para ASTRID..." required></textarea>
+        <br>
+        <label><input type="checkbox" name="termos" required> Aceito os termos &copy;</label>
+        <br><br>
+         <p><abbr title="Seus dados são protegidos e utilizados apenas para contato.">ⓘ</abbr></p>
+        <button type="submit">Enviar</button>
+    </form>
+    <br>
+    <br> 
+    <p>Quer saber mais sobre a ASTRID ou acompanhar o desenvolvimento da personagem? Entre em contato com sua criadora clicando nesse link abaixo!</p>
+    <p><a href="https://br.linkedin.com/in/bianca-minadakis" target="_blank" >Clique aqui&trade;</a></p>
+</section>
+</main>
+<footer>
+    <p>&copy; ASTRID — Sistema de suporte tecnológico.</p>
+</footer>
 </body>
 </html>
