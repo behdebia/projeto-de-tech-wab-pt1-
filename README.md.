@@ -1,0 +1,33 @@
+Ficha da Personagem
+
+Sobre o projeto
+
+ASTRID é uma personagem de inteligência artificial humanoide desenvolvida para atuar como parceira e suporte tecnológico de uma super-heroína humana. Sua principal habilidade é identificar e interpretar movimentos humanos, transformando gestos em comandos digitais.
+
+O projeto consiste em uma página web que apresenta a personagem, suas habilidades, seus atributos, seu inventário e suas conquistas, utilizando uma interface com estética futurista e tecnológica.
+
+Funcionalidades
+
+- Sobre a ASTRID: apresentação da personagem e visualização de seu modelo 3D.
+- Atributos e habilidades: exibição das capacidades tecnológicas e das habilidades da personagem.
+- Inventário: apresentação dos equipamentos e sistemas da ASTRID, com descrições e níveis de raridade.
+- Conquistas: destaque para os principais feitos da personagem.
+- Contato: formulário para preenchimento de informações e envio de mensagens.
+- Design responsivo: adaptação do layout para computadores, tablets e celulares.
+
+Tecnologias utilizadas
+
+- HTML5: estruturação do conteúdo e organização das seções da página.
+- CSS3: estilização, cores, tipografia, organização dos elementos, efeitos visuais e responsividade.
+
+Identidade visual
+
+A interface utiliza fundo preto, detalhes em ciano e roxo e tipografia futurista, inspirada em sistemas tecnológicos e universos de ficção científica.
+
+Objetivo acadêmico
+
+O projeto tem como objetivo aplicar os conhecimentos de HTML e CSS na construção de uma página web estruturada, estilizada e responsiva, explorando recursos de organização de conteúdo e apresentação visual.
+
+---
+
+Desenvolvido como projeto acadêmico de desenvolvimento web.
