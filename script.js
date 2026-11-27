@@ -269,4 +269,17 @@ document.addEventListener("DOMContentLoaded", () => {
             }, 700);
         });
     }
+
+    const controleConteudo = document.getElementById("controle-conteudo");
+    const conteudoExpandido = document.querySelector(".conteudo-expandido");
+    const textoControle = document.getElementById("texto-controle");
+
+    if (controleConteudo && conteudoExpandido) {
+        controleConteudo.addEventListener("click", () => {
+            const estaExpandido = controleConteudo.getAttribute("aria-expanded") === "true";
+            conteudoExpandido.style.display = estaExpandido ? "none" : "block";
+            if (textoControle) textoControle.textContent = estaExpandido ? "Ver mais" : "Ver menos";
+            controleConteudo.setAttribute("aria-expanded", String(!estaExpandido));
+        });
+    }
 });
