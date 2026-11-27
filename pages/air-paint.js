@@ -110,13 +110,13 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     const loadHandLandmarker = async () => {
-        if (!window.vision) throw new Error("A biblioteca MediaPipe não foi carregada. Verifique sua conexão.");
+        const module = await import("https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.22/+esm");
 
-        const filesetResolver = await window.vision.FilesetResolver.forVisionTasks(
+        const filesetResolver = await module.FilesetResolver.forVisionTasks(
             "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.22/wasm"
         );
 
-        const criarLandmarker = (delegate) => window.vision.HandLandmarker.createFromOptions(filesetResolver, {
+        const criarLandmarker = (delegate) => module.HandLandmarker.createFromOptions(filesetResolver, {
             baseOptions: {
                 modelAssetPath: "https://storage.googleapis.com/mediapipe-models/hand_landmarker/hand_landmarker/float16/1/hand_landmarker.task",
                 delegate
