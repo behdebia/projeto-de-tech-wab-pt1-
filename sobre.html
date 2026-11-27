@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Conheça ASTRID, uma inteligência artificial humanoide.">
+    <title>Sobre | ASTRID</title>
+
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.1.0/model-viewer.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>FICHA DA PERSONAGEM</h1>
+
+        <nav aria-label="Navegação principal">
+            <h3>Menu</h3>
+            <button id="menu-toggle" class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menu">
+                <span aria-hidden="true">☰</span>
+            </button>
+            <ul id="menu-principal">
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="index.html#atributos">Atributos &amp; Habilidades</a></li>
+                <li><a href="index.html#inventario">Inventário &amp; Conquistas</a></li>
+                <li><a href="index.html#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="sobre">
+            <h2>SOBRE A ASTRID</h2>
+
+            <img
+                src="imagens/astrid-perfil.png.png"
+                alt="Avatar da personagem ASTRID"
+                class="perfil"
+            >
+
+            <h3>Visualize em 3D:</h3>
+
+            <model-viewer
+                src="modelos/ASTRID.vrm"
+                camera-controls
+                auto-rotate
+                style="width:250px;height:400px;">
+            </model-viewer>
+
+            <p>
+                Uma personagem de inteligência artificial humanoide criada
+                para auxiliar os humanos através da tecnologia. ASTRID possui
+                uma habilidade única de identificar e interpretar movimentos
+                humanos, transformando gestos em comandos e ações digitais.
+                Sua principal aplicação é o Arpente, sistema que permite
+                transformar os movimentos das mãos em desenhos na tela.
+                Ao lado de uma super-heroína humana, ASTRID atua como sua
+                parceira e suporte tecnológico, usando sua inteligência para
+                ajudá-la em suas missões e tornando-se uma verdadeira aliada
+                dos humanos.
+            </p>
+
+            <div class="conteudo-expandido" style="display:none;">
+                <p>
+                    ASTRID é mais do que uma simples assistente; ela é uma
+                    parceira que aprende e se adapta às necessidades de sua
+                    usuária. Com um design elegante e funcional, ASTRID é
+                    capaz de se integrar a diversos dispositivos e plataformas,
+                    oferecendo suporte em tempo real e executando tarefas
+                    complexas com facilidade.
+                </p>
+                <p>
+                    Sua inteligência artificial é alimentada por um avançado
+                    sistema de aprendizado de máquina, que permite a ASTRID
+                    melhorar continuamente suas habilidades e expandir seu
+                    conhecimento. Além disso, ASTRID é equipada com um
+                    sofisticado módulo de segurança, garantindo a proteção
+                    dos dados e a privacidade de sua usuária em todas as
+                    interações.
+                </p>
+            </div>
+
+            <button id="controle-conteudo" class="controle-conteudo" aria-expanded="false" aria-controls="conteudo-expandido">
+                <span id="texto-controle">Ver mais</span>
+                <span aria-hidden="true">▼</span>
+            </button>
+
+            <button id="botao-historia" class="botao-historia" type="button" aria-expanded="false" aria-controls="historia-completa">
+                Ver história completa
+            </button>
+            <p id="historia-completa" class="historia-completa" aria-hidden="true" hidden>
+                A história completa mostra como ASTRID evoluiu de uma IA assistiva para uma parceira humanoide capaz de reconhecer gestos, apoiar super-heroínas e transformar movimentos em ações digitais em tempo real.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; ASTRID — Sistema de suporte tecnológico.</p>
+    </footer>
+
+    <script src="script.js" defer></script>
+
+</body>
+</html>

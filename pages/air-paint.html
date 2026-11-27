@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AR Paint integrado ao sistema ASTRID">
+    <title>AR Paint | ASTRID</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="air-paint.css">
+</head>
+<body>
+    <div class="scanlines" aria-hidden="true"></div>
+
+    <header class="ar-header">
+        <a class="brand" href="../index.html" aria-label="Voltar à página principal">
+            <span class="brand-mark">A</span>
+            <span>ASTRID // AR PAINT</span>
+        </a>
+        <a class="back-button" href="../index.html">← Voltar à página principal</a>
+    </header>
+
+    <main class="ar-main">
+        <section class="intro-panel" aria-labelledby="titulo-ar">
+            <div>
+                <p class="eyebrow">MÓDULO EXPERIMENTAL // ARPENTE</p>
+                <h1 id="titulo-ar">Desenhe no ar</h1>
+                <p>Use o indicador para desenhar, o indicador e o médio para navegar sem deixar marca e feche a mão para pausar.</p>
+            </div>
+            <div class="permission-card">
+                <span class="permission-icon" aria-hidden="true">◉</span>
+                <p>A câmera é processada neste navegador e não é enviada para um servidor.</p>
+                <button id="start-camera" class="primary-button" type="button">Iniciar câmera</button>
+                <button id="stop-camera" class="secondary-button" type="button" disabled>Encerrar experiência</button>
+            </div>
+        </section>
+
+        <section class="workspace" aria-label="Área AR Paint">
+            <aside class="tools-panel" aria-label="Ferramentas de desenho">
+                <h2>Ferramentas</h2>
+                <div class="tool-grid">
+                    <button class="color-tool active" type="button" data-color="#ff304f" aria-label="Cor vermelha" aria-pressed="true"><span style="--tool-color:#ff304f"></span>Vermelho</button>
+                    <button class="color-tool" type="button" data-color="#38df82" aria-label="Cor verde" aria-pressed="false"><span style="--tool-color:#38df82"></span>Verde</button>
+                    <button class="color-tool" type="button" data-color="#36baff" aria-label="Cor azul" aria-pressed="false"><span style="--tool-color:#36baff"></span>Azul</button>
+                    <button class="color-tool" type="button" data-color="#ffe45c" aria-label="Cor amarela" aria-pressed="false"><span style="--tool-color:#ffe45c"></span>Amarelo</button>
+                </div>
+
+                <button id="eraser" class="tool-button" type="button" aria-pressed="false">⌫ Borracha</button>
+                <button id="clear-canvas" class="tool-button" type="button">Limpar tela</button>
+                <button id="save-drawing" class="tool-button save-button" type="button">Salvar PNG</button>
+
+                <div class="hand-status">
+                    <span id="hand-indicator" class="hand-dot"></span>
+                    <div>
+                        <small>RECONHECIMENTO</small>
+                        <strong id="hand-status-text">Aguardando câmera</strong>
+                    </div>
+                </div>
+
+                <div class="camera-status">
+                    <small>STATUS DA CÂMERA</small>
+                    <strong id="camera-status-text">Não iniciada</strong>
+                </div>
+            </aside>
+
+            <div class="stage-panel">
+                <div id="paint-stage" class="paint-stage">
+                    <video id="camera-video" muted playsinline aria-label="Visualização da câmera"></video>
+                    <canvas id="drawing-canvas" aria-label="Área de desenho AR Paint"></canvas>
+                    <canvas id="landmarks-canvas" aria-hidden="true"></canvas>
+                    <div id="cursor-dot" class="cursor-dot" aria-hidden="true"></div>
+                    <div id="camera-message" class="camera-message">
+                        <span>◉</span>
+                        <strong>Câmera pronta para iniciar</strong>
+                        <p>Permita o acesso à câmera para ativar o reconhecimento das mãos.</p>
+                    </div>
+                </div>
+
+                <div class="gesture-guide" aria-label="Instruções de gestos">
+                    <div><span class="gesture-icon">☝</span><p><strong>Desenhar</strong>Indicador levantado</p></div>
+                    <div><span class="gesture-icon">✌</span><p><strong>Navegar</strong>Indicador + médio</p></div>
+                    <div><span class="gesture-icon">✊</span><p><strong>Pausar</strong>Mão fechada</p></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="ar-footer">
+        <p>ASTRID // AR PAINT — Reconhecimento local de gestos</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.22/vision_bundle.js"></script>
+    <script src="air-paint.js" defer></script>
+</body>
+</html>

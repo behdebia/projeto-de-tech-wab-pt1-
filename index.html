@@ -5,19 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Ficha da personagem ASTRID, uma inteligência artificial humanoide.">
     <title>Ficha da ASTRID</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.1.0/model-viewer.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<h1>FICHA DA PERSONAGEM</h1>
+<div id="astrid-boot" class="astrid-boot" aria-label="Inicializando ASTRID">
+    <div class="boot-radar"></div>
+    <p>ASTRID // INICIALIZANDO SISTEMAS</p>
+</div>
+<div id="hud-cursor-glow" aria-hidden="true"></div>
+<div id="hud-particles" aria-hidden="true"></div>
+<div class="system-status" aria-label="Status da ASTRID">
+    <span class="status-dot"></span>
+    <span id="status-text">ASTRID ONLINE</span>
+</div>
 
 <header>
-    <nav>
+    <h1 id="titulo-personagem" data-glitch="FICHA DA PERSONAGEM">FICHA DA PERSONAGEM</h1>
+    <nav aria-label="Navegação principal">
         <h3>Menu</h3>
-        <ul>
+        <button id="menu-toggle" class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menu">
+            <span aria-hidden="true">☰</span>
+        </button>
+        <ul id="menu-principal">
             <li><a href="#sobre">Sobre</a></li>
-            <li><a href="#atributos">Atributos &amp; Habilidades</a></li>
-            <li><a href="#inventario">Inventário &amp; Conquistas</a></li>
+            <li><a href="#atributos">Atributos</a></li>
+            <li><a href="#progressos">Progressos</a></li>
+            <li><a href="#habilidades">Habilidades</a></li>
+            <li><a href="#inventario">Inventário</a></li>
+            <li><a href="#conquistas">Conquistas</a></li>
             <li><a href="#contato">Contato</a></li>
         </ul>
     </nav>
@@ -29,48 +51,70 @@
     <img src="imagens/astrid-perfil.png.png" alt="Avatar da personagem ASTRID" class="perfil">
     
     <h3>Visualize em 3D:</h3>
-    <model-viewer src="modelos/ASTRID.vrm" camera-controls auto-rot
+    <model-viewer src="modelos/ASTRID.vrm" camera-controls auto-rotate
      style="width:250px;height:400px;"></model-viewer>
     
-    <p>Uma personagem de inteligência artificial humanoide criada para auxiliar os humanos através da tecnologia. ASTRID possui uma habilidade única de identificar e interpretar movimentos humanos, transformando gestos em comandos e ações digitais. Sua principal aplicação é o Arpente, sistema que permite transformar os movimentos das mãos em desenhos na tela. Ao lado de uma super-heroína humana, ASTRID atua como sua parceira e suporte tecnológico, usando sua inteligência para ajudá-la em suas missões e tornando-se uma verdadeira aliada dos humanos.</p>
+    <p id="historia-resumo" class="historia-resumo">Uma personagem de inteligência artificial humanoide criada para auxiliar os humanos através da tecnologia.</p>
+    <p id="historia-completa" class="historia-completa" aria-hidden="true" hidden>ASTRID possui uma habilidade única de identificar e interpretar movimentos humanos, transformando gestos em comandos e ações digitais. Sua principal aplicação é o Arpente, sistema que permite transformar os movimentos das mãos em desenhos na tela. Ao lado de uma super-heroína humana, ASTRID atua como sua parceira e suporte tecnológico, usando sua inteligência para ajudá-la em suas missões e tornando-se uma verdadeira aliada dos humanos.</p>
+    <button id="botao-historia" class="botao-historia" type="button" aria-expanded="false" aria-controls="historia-completa">Ver história completa</button>
 </section>
 <br>
 
 <section id="atributos">
     <h2>ATRIBUTOS &amp; HABILIDADES</h2>
     <h3>ATRIBUTOS</h3>
-    <ul>
-        <li>PROCESSAMENTO</li>
-        <li>INTELIGÊNCIA</li>
-        <li>PERCEPÇÃO</li>
-        <li>TECNOLOGIA</li>
-        <li>VELOCIDADE DE RESPOSTA</li>
+    <ul class="lista-atributos">
+        <li><article><h4>PROCESSAMENTO</h4><p>Análise rápida de dados e movimentos.</p></article></li>
+        <li><article><h4>INTELIGÊNCIA</h4><p>Aprendizado, interpretação e tomada de decisões.</p></article></li>
+        <li><article><h4>PERCEPÇÃO</h4><p>Reconhecimento visual do ambiente e dos gestos.</p></article></li>
+        <li><article><h4>TECNOLOGIA</h4><p>Domínio de sistemas digitais e visão computacional.</p></article></li>
+        <li><article><h4>VELOCIDADE<br>DE RESPOSTA</h4><p>Tempo ágil para analisar e executar comandos.</p></article></li>
     </ul>
     <br>
     <br>
-    <h3>PROGRESSOS</h3>
-    
-    
-    <ul>
-        <li>PROCESSAMENTO
+    <h3 id="progressos">PROGRESSOS</h3>
+
+    <ul class="lista-progressos">
+        <li><article>
+            <h4>PROCESSAMENTO</h4>
             <div class="barra-atributo"><div class="progresso-de-processamento"></div></div>
-        </li>
-        <li>INTELIGÊNCIA
+            <p>95% — EXCELENTE</p>
+        </article></li>
+        <li><article>
+            <h4>INTELIGÊNCIA</h4>
             <div class="barra-atributo"><div class="progresso-de-inteligencia"></div></div>
-        </li>
-        <li>PERCEPÇÃO
+            <p>90% - Sua inteligência avançada permite que ela aprenda com experiências passadas e tome decisões eficazes.</p>
+        </article></li>
+        <li><article>
+            <h4>PERCEPÇÃO</h4>
             <div class="barra-atributo"><div class="progresso-de-percepcao"></div></div>
-        </li>
-        <li>TECNOLOGIA
+            <p>85% - A percepção aguçada da ASTRID possibilita o reconhecimento preciso de padrões e gestos humanos.</p>
+        </article></li>
+        <li><article>
+            <h4>TECNOLOGIA</h4>
             <div class="barra-atributo"><div class="progresso-de-tecnologia"></div></div>
-        </li>
-        <li>VELOCIDADE DE RESPOSTA
+            <p>100% - ASTRID domina completamente a tecnologia envolvida em sua programação e em sistemas digitais.</p>
+        </article></li>
+        <li><article>
+            <h4>VELOCIDADE DE RESPOSTA</h4>
             <div class="barra-atributo"><div class="progresso-de-velocidade"></div></div>
-        </li>
+            <p>88% - Sua velocidade de resposta é impressionante, conseguindo reagir a comandos e estímulos em frações de segundo.</p>
+        </article></li>
     </ul>
-    <br> 
-    <h3>HABILIDADES</h3>
-    <ul>
+    <div class="painel-xp" aria-label="Sistema de experiência">
+        <div class="cabecalho-xp">
+            <span id="nivel-xp">Nível 1</span>
+            <span id="contador-xp">0 / 100 XP</span>
+        </div>
+        <div class="barra-xp" role="progressbar" aria-label="Experiência" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+            <div id="progresso-xp" class="progresso-xp"></div>
+        </div>
+        <button id="botao-xp" class="botao-xp" type="button">Ganhar XP</button>
+        <p id="status-xp" class="status-xp" role="status" aria-live="polite"></p>
+    </div>
+    <br>
+    <h3 id="habilidades">HABILIDADES</h3>
+    <ul class="lista-habilidades">
         <li>
             <article>
                 <h4>Caça-Fantasma</h4>
@@ -81,6 +125,7 @@
             <article>
                 <h4>ARPENTE</h4>
                 <p>Transforma os movimentos das mãos captados pela webcam em desenhos digitais.</p>
+                <a class="botao-ar-paint" href="pages/air-paint.html">TESTE AQUI</a>
             </article>
         </li>
         <li>
@@ -95,69 +140,32 @@
 <section id="inventario">
     <h2>INVENTÁRIO &amp; CONQUISTAS</h2>
     <h3>INVENTÁRIO</h3>
-    <ul>
-        <li>
-            <article>
-                <h4>Corpo Humanoide</h4>
-                <img src="imagens/corpo_humanoide.png"> 
-                <p>A forma física autônoma da ASTRID, criada para permitir sua interação direta com o ambiente.</p>
-                <p>Raridade: ÉPICO</p>
-            </article>
-        </li>
-        <li>
-            <article>
-                <h4>Luvas de Interface</h4>
-                <img src="imagens/luva_d_interface.png"> 
-                <p>Permitem que ASTRID interprete estímulos relacionados ao toque humano, ampliando sua capacidade de interação com pessoas e objetos.</p>
-                <p>Raridade: SUPER-RARO</p>
-            </article>
-        </li>
-        <li>
-            <article>
-                <h4>Núcleo de Energia</h4>
-                 <img src="imagens/Núcleo de Energia.png"> 
-                <p>Localizado em seu equipamento de cintura. Fornece energia para manter seus sistemas e seu corpo humanoide em funcionamento.</p>
-                <p>Raridade: COMUM</p>
-            </article>
-        </li>
-        <li>
-            <article>
-                <h4>Módulos de Mobilidade</h4>
-                <img src="imagens/modulos_de_mobilidade.png"> 
-                <p>Integrados à estrutura humanoide, permitem que ASTRID se movimente e interaja fisicamente com o ambiente.</p>
-                <p>Raridade: COMUM</p>
-            </article>
-        </li>
-        <li>
-            <article>
-                <h4>Versão Digital</h4>
-                <img src="imagens/versao digital.png"> 
-                <p>A forma digital da ASTRID. Através da webcam, ela utiliza visão computacional para perceber o ambiente e interpretar movimentos humanos.</p>
-                <p>Raridade: RARO</p>
-            </article>
-        </li>
-        <li>
-            <article>
-                <h4>Arpente</h4>
-                 <img src="imagens/sistema_visao_computacional.png"> 
-                <p>Sistema capaz de transformar movimentos das mãos captados pela webcam em desenhos digitais.</p>
-                <p>Raridade: LENDÁRIO</p>
-            </article>
-        </li>
-    </ul>
-    <br> 
-    <h3>CONQUISTAS</h3>
+    <div id="filtros-inventario" class="filtros-inventario" aria-label="Filtros do inventário">
+        <button type="button" class="filtro-ativo" data-filtro="todos" aria-pressed="true">Todos</button>
+        <button type="button" data-filtro="equipamento" aria-pressed="false">Equipamentos</button>
+        <button type="button" data-filtro="sistema" aria-pressed="false">Sistemas</button>
+        <button type="button" data-filtro="consumivel" aria-pressed="false">Consumíveis</button>
+        <button type="button" data-filtro="trofeu" aria-pressed="false">Troféus</button>
+    </div>
+    <p id="status-inventario" class="status-inventario" role="status" aria-live="polite">Exibindo todos os itens.</p>
+    <div id="lista-inventario" class="lista-inventario"></div>
+    <br>
+    <h3 id="conquistas">CONQUISTAS</h3>
 
     <ul>
         <li>Primeira IA a possuir autonomia humanoide</li>
         <li>Desenvolvimento do Arpente</li>
         <li>Parceira de humanos</li>
+        <li>Reconhecimento internacional por inovações em IA</li>
+        <li>Prêmio de Melhor Parceiro Tecnológico</li>
     </ul>
 </section>
 
 <section id="contato">
     <h2>CONTATO</h2>
-    <form action="#" method="post">
+    <form id="form-contato" action="#" method="post">
+        <input type="hidden" name="destinatario" value="mebibisbia@gmail.com">
+        <input type="hidden" name="data_envio" id="data-envio">
         <label for="nome">Nome:</label>
         <input type="text" id="nome" name="nome" minlength="3" maxlength="50" required>
         <br>
@@ -175,7 +183,8 @@
         <br>
         <label><input type="checkbox" name="termos" required> Aceito os termos &copy;</label>
         <br><br>
-         <p><abbr title="Seus dados são protegidos e utilizados apenas para contato.">ⓘ</abbr></p>
+        <p><abbr title="Seus dados são protegidos e utilizados apenas para contato.">ⓘ</abbr></p>
+        <p id="status-envio" class="status-envio" role="status" aria-live="polite"></p>
         <button type="submit">Enviar</button>
     </form>
     <br>
@@ -187,5 +196,6 @@
 <footer>
     <p>&copy; ASTRID — Sistema de suporte tecnológico.</p>
 </footer>
+<script src="script.js" defer></script>
 </body>
 </html>
