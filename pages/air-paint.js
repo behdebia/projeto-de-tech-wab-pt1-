@@ -110,22 +110,28 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     const loadHandLandmarker = async () => {
-        if (!window.vision) throw new Error("Módulo MediaPipe indisponível.");
+        if (!window.vision) throw new Error("A biblioteca MediaPipe não foi carregada. Verifique sua conexão.");
 
         const filesetResolver = await window.vision.FilesetResolver.forVisionTasks(
             "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.22/wasm"
         );
 
-        return window.vision.HandLandmarker.createFromOptions(filesetResolver, {
+        const criarLandmarker = (delegate) => window.vision.HandLandmarker.createFromOptions(filesetResolver, {
             baseOptions: {
                 modelAssetPath: "https://storage.googleapis.com/mediapipe-models/hand_landmarker/hand_landmarker/float16/1/hand_landmarker.task",
-                delegate: "GPU"
+                delegate
             },
             runningMode: "VIDEO",
             numHands: 1,
             minHandDetectionConfidence: 0.6,
             minTrackingConfidence: 0.5
         });
+
+        try {
+            return await criarLandmarker("GPU");
+        } catch (gpuError) {
+            return criarLandmarker("CPU");
+        }
     };
 
     const stopExperience = () => {
@@ -248,7 +254,9 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
             cameraStatus.textContent = "Câmera indisponível";
             cameraMessage.querySelector("strong").textContent = "Câmera não disponível";
-            cameraMessage.querySelector("p").textContent = "Use HTTPS ou localhost em um navegador moderno.";
+            cameraMessage.querySelector("p").textContent = window.isSecureContext
+                ? "Este navegador não oferece acesso à câmera. Use uma versão moderna do Chrome, Edge ou Firefox."
+                : "Abra o site por HTTPS ou pelo localhost. O navegador bloqueia câmera em conexões inseguras.";
             return;
         }
 
@@ -276,9 +284,25 @@ document.addEventListener("DOMContentLoaded", () => {
             stopButton.disabled = false;
             detectFrame();
         } catch (error) {
-            cameraStatus.textContent = "Acesso não autorizado ou câmera indisponível";
-            cameraMessage.querySelector("strong").textContent = "Não foi possível iniciar";
-            cameraMessage.querySelector("p").textContent = "Verifique a câmera e a permissão do navegador, depois tente novamente.";
+            let titulo = "Não foi possível iniciar";
+            let mensagem = "Verifique a câmera e a permissão do navegador, depois tente novamente.";
+
+            if (error && error.name === "NotAllowedError") {
+                titulo = "Permissão da câmera bloqueada";
+                mensagem = "Clique no ícone da câmera na barra do navegador e permita o acesso.";
+            } else if (error && error.name === "NotFoundError") {
+                titulo = "Nenhuma câmera encontrada";
+                mensagem = "Conecte uma câmera ou escolha outro dispositivo nas configurações do navegador.";
+            } else if (error && error.name === "NotReadableError") {
+                titulo = "A câmera está em uso";
+                mensagem = "Feche aplicativos ou abas que estejam usando a câmera e tente novamente.";
+            } else if (error && error.message) {
+                mensagem = error.message;
+            }
+
+            cameraStatus.textContent = titulo;
+            cameraMessage.querySelector("strong").textContent = titulo;
+            cameraMessage.querySelector("p").textContent = mensagem;
             startButton.disabled = false;
             stopButton.disabled = true;
             if (stream) {
